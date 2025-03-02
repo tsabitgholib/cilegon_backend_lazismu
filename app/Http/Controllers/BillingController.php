@@ -66,7 +66,7 @@ class BillingController extends Controller
 
     if ($authHeader && preg_match('/Bearer\s(\S+)/', $authHeader, $matches)) {
         $token = $matches[1];
-        $key = env('JWT_SECRET', 'your-secret-key');
+        $key = env('JWT_SECRET', 'LazismuDIY_ICT');
 
         try {
             $decoded = JWT::decode($token, $key, ['HS256']);
