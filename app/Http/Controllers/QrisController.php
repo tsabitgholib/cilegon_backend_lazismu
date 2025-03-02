@@ -262,22 +262,22 @@ class QrisController extends Controller
             
                 $invoiceIds = $latestTransaction->invoice_id;
 
-                // Format pesan WhatsApp
-                $message = "*ZAKAT/INFAK ANDA BERHASIL*\n" .
-                    "*$invoiceIds*\n" .
-                    "Telah terima dari Bpk/Ibu *{$billing->username}*\n" .
-                    "Sebesar *Rp " . number_format($amount, 0, ',', '.') . "*\n" .
-                    "Untuk Pembayaran *$campaignName*\n\n" .
-                    "Yogyakarta, " . now()->format('d F Y - H:i') . "\n" .
-                    "TTD\n" .
-                    "Admin Jalan Kebaikan by Lazismu Daerah Istimewa Yogyakarta\n\n" .
-                    "Terimakasih \n" .
-                    "Kepada Yth Bpk/Ibu {$billing->username} atas kepercayaan anda.\n\n" .
-                    "أَجَرَكَ اللهُ فِيْمَا أَعْطَيْتَ, وَبَارَكَ لَكَ فِيْمَا أَبْقَيْتَ, وَاجْعَلْهُ لَكَ طَهُوْرًا\n\n" .
-                    "\"Mudah-mudahan Allah memberi pahala atas apa yang engkau berikan, memberikan berkah atas apa yang masih ada di tanganmu dan menjadikannya sebagai pembersih bagimu.”";
+                // // Format pesan WhatsApp
+                // $message = "*ZAKAT/INFAK ANDA BERHASIL*\n" .
+                //     "*$invoiceIds*\n" .
+                //     "Telah terima dari Bpk/Ibu *{$billing->username}*\n" .
+                //     "Sebesar *Rp " . number_format($amount, 0, ',', '.') . "*\n" .
+                //     "Untuk Pembayaran *$campaignName*\n\n" .
+                //     "Yogyakarta, " . now()->format('d F Y - H:i') . "\n" .
+                //     "TTD\n" .
+                //     "Admin Jalan Kebaikan by Lazismu Daerah Istimewa Yogyakarta\n\n" .
+                //     "Terimakasih \n" .
+                //     "Kepada Yth Bpk/Ibu {$billing->username} atas kepercayaan anda.\n\n" .
+                //     "أَجَرَكَ اللهُ فِيْمَا أَعْطَيْتَ, وَبَارَكَ لَكَ فِيْمَا أَبْقَيْتَ, وَاجْعَلْهُ لَكَ طَهُوْرًا\n\n" .
+                //     "\"Mudah-mudahan Allah memberi pahala atas apa yang engkau berikan, memberikan berkah atas apa yang masih ada di tanganmu dan menjadikannya sebagai pembersih bagimu.”";
 
-                // Kirim pesan WhatsApp
-                $this->sendWhatsApp($billing->phone_number, $message);
+                // // Kirim pesan WhatsApp
+                // $this->sendWhatsApp($billing->phone_number, $message);
 
                 Logger::log('Push Notification', $request->all(), [
                     'responseCode' => '00',
